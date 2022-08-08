@@ -1,5 +1,5 @@
 from http.server import BaseHTTPRequestHandler
-from datetime import datetime
+from urllib import parse
 
 class handler(BaseHTTPRequestHandler):
 
@@ -7,7 +7,8 @@ class handler(BaseHTTPRequestHandler):
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
-    message = "Howdy"
-    self.wfile.write(str(message).encode())
+    
+    path = self.path
+    self.wfile.write(str(path).encode())
     return
   
