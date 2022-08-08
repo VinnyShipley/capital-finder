@@ -8,7 +8,8 @@ class handler(BaseHTTPRequestHandler):
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
     
-    path = self.path
-    self.wfile.write(str(path).encode())
+    url_components = parse.urlsplit(self.path)
+    message = str(url_components)
+    self.wfile.write(str(message).encode())
     return
   
