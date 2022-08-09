@@ -15,13 +15,13 @@ class handler(BaseHTTPRequestHandler):
     #turns tuple into dictionary so it can be accessed with key value pairs
     dict_query_str = dict(query_string_list)
     
+    country = dict_query_str['country']
+    capital = dict_query_str['capital']
     if 'country' in dict_query_str:
       message = f'this is the country {country}'
     else:
       message = 'ya dunce'
     #separating the queries into variables 
-    country = dict_query_str['country']
-    capital = dict_query_str['capital']
     
     # output message
     message = f'the capital of {country} is {capital}'
