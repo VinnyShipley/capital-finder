@@ -10,6 +10,5 @@ class handler(BaseHTTPRequestHandler):
     
     url_components = parse.urlsplit(self.path)
     message = str(url_components)
-    self.wfile.write(str(message).encode())
+    self.wfile.write(str(message.query).encode())
     return
-  
