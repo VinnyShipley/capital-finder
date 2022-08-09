@@ -11,6 +11,6 @@ class handler(BaseHTTPRequestHandler):
     
     message = self.path
     #message = f'the capital of {country} is {capital}'
-    self.wfile.write(message).encode()
+    self.wfile.write(message.encode())
     return
   
