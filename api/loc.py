@@ -1,3 +1,4 @@
+from email import message
 from http.server import BaseHTTPRequestHandler
 from urllib import parse
 
@@ -17,12 +18,17 @@ class handler(BaseHTTPRequestHandler):
     
     
     #separating the queries into variables 
-    country = dict_query_str['country']
-    capital = dict_query_str['capital']
-  
+    # country = dict_query_str['country']
+    # capital = dict_query_str['capital']
+
+    if 'country' in dict_query_str:
+      message = 'this has country in it'
+      
+    else:
+      message = 'this does not'
     
     # output message
-    message = f'the capital of {country} is {capital}'
+    # message = f'the capital of {country} is {capital}'
     #prints the message
     self.wfile.write(message.encode())
     return
