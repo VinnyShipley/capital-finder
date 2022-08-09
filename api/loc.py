@@ -1,6 +1,7 @@
 from email import message
 from http.server import BaseHTTPRequestHandler
 from urllib import parse
+import requests
 
 class handler(BaseHTTPRequestHandler):
 
@@ -24,8 +25,14 @@ class handler(BaseHTTPRequestHandler):
     
     
     if 'country' in dict_query_str:
-      message = 'this has country in it and the country is'
-      
+      url = 'https://restcountries.com/v3.1/name/'
+      response = requests.get(url + dict_query_str['country'])
+      data = response.json()
+      country_display = []
+      for country_data in data:
+        country = country_data['name'][0]['capital'][0]
+        country_display.append(country)
+      message = country_display
     else:
       message = 'this does not'
     
