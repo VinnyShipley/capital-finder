@@ -24,7 +24,7 @@ class handler(BaseHTTPRequestHandler):
     
     
     if 'country' in dict_query_str:
-      message = f'this has country in it and the country is {country}'
+      message = f'this has country in it and the country is'
       
     else:
       message = 'this does not'
