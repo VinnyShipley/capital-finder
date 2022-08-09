@@ -19,12 +19,12 @@ class handler(BaseHTTPRequestHandler):
   
     
     #separating the queries into variables 
-    country = dict_query_str['country']
-    capital = dict_query_str['capital']
+    # country = dict_query_str['country']
+    # capital = dict_query_str['capital']
     
     
     if 'country' in dict_query_str:
-      message = f'this has country in it and the country is'
+      message = 'this has country in it and the country is'
       
     else:
       message = 'this does not'
