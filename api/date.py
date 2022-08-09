@@ -11,7 +11,7 @@ class handler(BaseHTTPRequestHandler):
     
     url_components = parse.urlsplit(self.path)
     
-    message = str(url_components)
+    message = str(url_components.query)
     #message = f'the capital of {country} is {capital}'
     self.wfile.write(message.encode())
     return
