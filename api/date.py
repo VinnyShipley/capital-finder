@@ -7,9 +7,10 @@ class handler(BaseHTTPRequestHandler):
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
+
     
-    
-    url_components = 'hello'
-    message = str(url_components)
-    self.wfile.write(str(message.query).encode())
+    message = self.path
+    #message = f'the capital of {country} is {capital}'
+    self.wfile.write(message).encode()
     return
+  
