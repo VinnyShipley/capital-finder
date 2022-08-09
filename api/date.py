@@ -9,7 +9,9 @@ class handler(BaseHTTPRequestHandler):
     self.end_headers()
 
     
-    message = self.path
+    url_components = parse.urlsplit(self.path)
+    
+    message = str(url_components)
     #message = f'the capital of {country} is {capital}'
     self.wfile.write(message.encode())
     return
